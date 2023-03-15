@@ -4,7 +4,7 @@ import co.com.bancolombia.model.persona.Persona;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface PersonaRepository {
+public interface PersonaRepository{
 
     Mono<Persona> findById(String id);
 
@@ -13,6 +13,4 @@ public interface PersonaRepository {
     Mono<Persona> save(Persona persona);
 
     Flux<Persona> getAll();
-
-    Mono<Persona> findByName(String name);
 }

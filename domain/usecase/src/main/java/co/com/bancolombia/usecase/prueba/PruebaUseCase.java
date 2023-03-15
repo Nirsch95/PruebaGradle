@@ -16,10 +16,6 @@ public class PruebaUseCase {
         return repository.getAll();
     }
 
-    public Mono<Persona> getPersonaByName(String name){
-        return repository.findByName(name);
-    }
-
     public Mono<Persona> save(Persona persona){
         return repository.save(persona);
     }

@@ -6,6 +6,8 @@ import co.com.bancolombia.mongo.helper.AdapterOperations;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Repository
 public class MongoRepositoryAdapter extends AdapterOperations<Persona, PersonaDocument, String, MongoDBRepository>

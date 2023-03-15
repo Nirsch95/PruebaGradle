@@ -4,7 +4,6 @@ import co.com.bancolombia.model.persona.Persona;
 import co.com.bancolombia.model.persona.gateways.PersonaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import reactor.core.CoreSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -35,15 +34,6 @@ public class PersonaRepositoryImpl implements PersonaRepository {
     @Override
     public Flux<Persona> getAll() {
         return dao.findAll();
-    }
-
-    @Override
-    public Mono<Persona> findByName(String name) {
-        return repository.findByName(name)
-                .map(personaDocument -> {
-                        Persona per = new Persona(personaDocument.getId(),personaDocument.getCreateAt(),personaDocument.getName());
-                    return per;
-                });
     }
 }
 
